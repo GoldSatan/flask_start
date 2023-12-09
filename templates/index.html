@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<title>Це заголовок основної сторінки</title>
+{% endblock %}
+
+
+
+
+{% block body %}
+
+	<div class="general">
+		<span>Контент!!!!</span>
+	</div>
+
+	{% if data == 1 %}
+
+		<div class="key{{data}}">
+			<h1>Сторінка  №{{data}}</h1>
+		</div>
+
+	{% elif data == 2 %}
+
+		<div class="key{{data}}">
+			<h1>Сторінка  №{{data}}</h1>
+		</div>
+
+	{% elif data == 3 %}
+
+		<div class="key{{data}}">
+			<h1>Сторінка  №{{data}}</h1>
+		</div>
+
+	{% elif data == 4 %}
+
+		<div class="key{{data}}">
+			<h1>Сторінка  №{{data}}</h1>
+		</div>
+
+	{% endif %}
+
+{% endblock %}

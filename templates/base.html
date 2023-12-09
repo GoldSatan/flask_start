@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	{% block head %}
+	{% endblock %}
+
+</head>
+<body>
+
+	<header>
+		<div class="head">
+			<a href="/" class="navigate">Головна сторінка</a>
+			<a href="/new1" class="navigate">Сторінка №1</a>
+			<a href="/new2" class="navigate">Сторінка №2</a>
+			<a href="/new3" class="navigate">Сторінка №3</a>
+			<a href="/new4" class="navigate">Сторінка №4</a>
+		</div>
+	</header>
+
+
+	{% block body %}
+	{% endblock %}
+
+
+	<footer>
+		<div class="footer">
+			<h1>якийсь футер на усіх веб-сторінках</h1>
+		</div>
+	</footer>
+</body>
+</html>
