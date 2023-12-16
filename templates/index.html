@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-	<title>Це заголовок основної сторінки</title>
+<title>Це заголовок основної сторінки</title>
 {% endblock %}
 
 
@@ -9,34 +9,72 @@
 
 {% block body %}
 
-	<div class="general">
-		<span>Контент!!!!</span>
-	</div>
+<div class="general">
+	<h2>У вашій сесії зараз є таке число - {{number}}</h2>
+
 
 	{% if data == 1 %}
 
-		<div class="key{{data}}">
-			<h1>Сторінка  №{{data}}</h1>
+	<div class="key{{data}}">
+		<br><br>
+
+
+		<div class="login">
+			<a href="/login">
+				Увійти у систему
+			</a>
 		</div>
+
+		<div class="page{{data}}">
+			<button onclick="window.open('/new1/function','_self')"> Добавити </button>
+		</div>
+	</div>
 
 	{% elif data == 2 %}
 
-		<div class="key{{data}}">
-			<h1>Сторінка  №{{data}}</h1>
+	<div class="key{{data}}">
+		<br><br>
+		
+		<div class="page{{data}}">
+			<a href="/new2/function">
+				<button> Відняти </button>
+			</a>
 		</div>
-
+	</div>
 	{% elif data == 3 %}
 
-		<div class="key{{data}}">
-			<h1>Сторінка  №{{data}}</h1>
-		</div>
+	<div class="key{{data}}">
+		<br><br>
 
+		<a href="{{ url_for('new3FunctionView') }}">
+			<button> Поділити </button>
+		</a>
+	</div>
 	{% elif data == 4 %}
 
-		<div class="key{{data}}">
-			<h1>Сторінка  №{{data}}</h1>
+	<div class="key{{data}}">
+		<br><br>
+
+		<div class="page{{data}}">
+			<button class="btn_func_4"> Помножити </button>
 		</div>
+	</div>
 
 	{% endif %}
+</div>
 
+
+
+
+<script>
+
+	function openNewPageForFunction_4() {
+		window.open('/new4/function','_self');
+	};
+
+	var btn_func_4 = document.querySelector('button.btn_func_4');
+
+	btn_func_4.addEventListener('click', openNewPageForFunction_4);
+
+</script>
 {% endblock %}
