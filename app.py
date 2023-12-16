@@ -7,13 +7,27 @@ def update_session():
     if 'calc' not in session:
         session['calc'] = 100
 
+'''
+
+session = {
+    "login": True,
+    "number: 100,
+}
+
+'''
 def is_login():
-    if 'login' in session:  return True
-    else:   return False
+    if 'login' in session:  
+        return True
+    else:   
+        return False
 
 def update_login():
     if not is_login():
         session['login'] = True
+
+def delete_login():
+    if is_login():
+        del session['login']
 
 
 @app.route('/login')
@@ -21,6 +35,14 @@ def loginView():
     update_login()
     
     return redirect('/')
+
+@app.route('/logout')
+def logoutView():
+    delete_login()
+
+    return redirect('/')
+    
+
 
 @app.route('/')
 def indexView():
@@ -74,21 +96,32 @@ def new2FunctionView():
 
 @app.route('/new3/function')
 def new3FunctionView():
+    
+    
+    
     if is_login():
+        
+        
         update_session()
         session['calc'] /= 2        
-        
         return render_template('index.html', data = 3, number=session['calc'])
+    
+    
     else:
         return redirect('/') 
 
 @app.route('/new4/function')
 def new4FunctionView():
+    
+    
     if is_login():
+        
+        
         update_session()
         session['calc'] *= 3
-
         return render_template('index.html', data = 4, number=session['calc'])
+    
+    
     else:
         return redirect('/') 
 

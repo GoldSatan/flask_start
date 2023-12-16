@@ -11,7 +11,17 @@
 
 <div class="general">
 	<h2>У вашій сесії зараз є таке число - {{number}}</h2>
+	<div class="login">
+		<a href="/login">
+			Увійти у систему
+		</a>
+	</div>
 
+	<div class="logout">
+		<a href="/logout">
+			Вийти з системи
+		</a>
+	</div>
 
 	{% if data == 1 %}
 
@@ -19,11 +29,7 @@
 		<br><br>
 
 
-		<div class="login">
-			<a href="/login">
-				Увійти у систему
-			</a>
-		</div>
+		
 
 		<div class="page{{data}}">
 			<button onclick="window.open('/new1/function','_self')"> Добавити </button>
